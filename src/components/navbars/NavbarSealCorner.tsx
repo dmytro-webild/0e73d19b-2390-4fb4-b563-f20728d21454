@@ -41,38 +41,48 @@ const NavbarSealCorner = ({
         transition={{ duration: 0.8, delay }}
         className="pointer-events-none fixed inset-0 z-50 text-white mix-blend-difference"
       >
-        <div
-          className="pointer-events-auto absolute left-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-2.5 sm:gap-3 text-current"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="size-5 sm:size-6 shrink-0">
-            {[0, 45, 90, 135].map((deg) => (
-              <path key={deg} d="M12 2 V22" transform={`rotate(${deg} 12 12)`} />
-            ))}
-            <circle cx="12" cy="12" r="3" fill="currentColor" />
-          </svg>
-          <span className="font-[family-name:var(--font-heading)] text-base sm:text-lg lg:text-xl uppercase tracking-[0.08em] leading-none whitespace-nowrap">
-            {brand}
-          </span>
-        </div>
+        <div className="pointer-events-none absolute left-0 right-0 top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center justify-between gap-3 px-4 md:left-[var(--gutter)] md:right-[var(--gutter)] md:px-0">
+          <div className="pointer-events-auto flex h-[2.75rem] max-w-[55%] min-w-0 items-center gap-2 sm:gap-3 text-current md:max-w-none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="size-5 sm:size-6 shrink-0">
+              {[0, 45, 90, 135].map((deg) => (
+                <path key={deg} d="M12 2 V22" transform={`rotate(${deg} 12 12)`} />
+              ))}
+              <circle cx="12" cy="12" r="3" fill="currentColor" />
+            </svg>
+            <span className="font-[family-name:var(--font-heading)] text-xs sm:text-base lg:text-xl uppercase tracking-[0.08em] leading-none truncate whitespace-nowrap">
+              {brand}
+            </span>
+          </div>
 
-        <div className="pointer-events-auto absolute right-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-[0.75rem]">
-          {cta && (
-            <a href={cta.href} className="flex h-[2.75rem] items-center whitespace-nowrap rounded-full border border-current px-[1.25rem] text-[length:var(--text-label)] font-semibold uppercase tracking-[var(--label-tracking)] transition-opacity duration-300 hover:opacity-70">
-              {cta.text}
-            </a>
-          )}
-          {navItems.length > 0 && (
-            <button
-              type="button"
-              aria-expanded={open}
-              aria-label={open ? closeText : menuText}
-              onClick={() => setOpen((v) => !v)}
-              className="flex size-[2.75rem] flex-col items-center justify-center gap-[0.3rem] rounded-full border border-current lg:hidden"
-            >
-              <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
-              <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
-            </button>
-          )}
+          <div className="pointer-events-auto flex h-[2.75rem] shrink-0 items-center gap-[0.75rem]">
+            {cta && (
+              <a
+                href={cta.href}
+                className="flex h-[2.75rem] w-[6.5rem] items-center justify-center whitespace-nowrap rounded-full border border-current px-3 text-[length:var(--text-label)] font-semibold uppercase tracking-[var(--label-tracking)] transition-opacity duration-300 hover:opacity-70 md:w-auto md:px-[1.25rem]"
+              >
+                <span className="hidden md:inline">{cta.text}</span>
+                <span className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold md:hidden">
+                  <svg className="size-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.67-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.063 2.876 1.21 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 2a9.94 9.94 0 0 0-8.584 14.988L2 22l5.16-1.354A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 0 1-4.06-1.11l-.29-.172-3.017.791.805-2.943-.19-.302A7.956 7.956 0 0 1 4 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/>
+                  </svg>
+                  <span>Réserver</span>
+                </span>
+              </a>
+            )}
+            {navItems.length > 0 && (
+              <button
+                type="button"
+                aria-expanded={open}
+                aria-label={open ? closeText : menuText}
+                onClick={() => setOpen((v) => !v)}
+                className="flex size-[2.75rem] flex-col items-center justify-center gap-[0.3rem] rounded-full border border-current lg:hidden"
+              >
+                <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
+                <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="absolute left-[calc(var(--gutter)+2.25rem)] top-1/2 hidden -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[0.75rem] lg:flex">
