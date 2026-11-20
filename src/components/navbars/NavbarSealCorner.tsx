@@ -44,15 +44,13 @@ const NavbarSealCorner = ({
         <div
           className="pointer-events-auto absolute left-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-2.5 sm:gap-3 text-current"
         >
-          <div className="flex size-7 items-center justify-center rounded-full border border-current shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="size-3.5">
-              {[0, 45, 90, 135].map((deg) => (
-                <path key={deg} d="M12 2 V22" transform={`rotate(${deg} 12 12)`} />
-              ))}
-              <circle cx="12" cy="12" r="3" fill="currentColor" />
-            </svg>
-          </div>
-          <span className="font-[family-name:var(--font-heading)] text-base sm:text-lg lg:text-xl uppercase tracking-[0.06em] leading-none whitespace-nowrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="size-5 sm:size-6 shrink-0">
+            {[0, 45, 90, 135].map((deg) => (
+              <path key={deg} d="M12 2 V22" transform={`rotate(${deg} 12 12)`} />
+            ))}
+            <circle cx="12" cy="12" r="3" fill="currentColor" />
+          </svg>
+          <span className="font-[family-name:var(--font-heading)] text-base sm:text-lg lg:text-xl uppercase tracking-[0.08em] leading-none whitespace-nowrap">
             {brand}
           </span>
         </div>
