@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import useMenuDialog from "@/components/kit/useMenuDialog";
+import { useLanguage } from "@/context/LanguageContext";
 
 type NavItem = { name: string; href: string };
 
@@ -18,11 +19,11 @@ type NavbarSealCornerProps = {
 const EASE_OUT: [number, number, number, number] = [0.25, 1, 0.5, 1];
 
 const NavbarSealCorner = ({
-  brand = "Villa Solenne",
+  brand = "Hotel Sid El-Aidi Medina",
   navItems = [],
-  cta = { text: "Book a stay", href: "#contact" },
+  cta = { text: "Réserver sur WhatsApp", href: "#contact-plum-form" },
   menuText = "Menu",
-  closeText = "Close",
+  closeText = "Fermer",
   delay = 2.2,
 }: NavbarSealCornerProps) => {
   const reduce = useReducedMotion();
@@ -30,6 +31,7 @@ const NavbarSealCorner = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const percent = useTransform(scrollYProgress, (v) => String(Math.round(v * 100)).padStart(2, "0"));
+  const { language, setLanguage } = useLanguage();
   useMenuDialog(open, panelRef, () => setOpen(false));
 
   return (
@@ -60,18 +62,37 @@ const NavbarSealCorner = ({
         </a>
 
         <div className="pointer-events-auto absolute right-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-[0.75rem]">
+          {/* Language Switcher */}
+          <div className="flex items-center gap-0.5 rounded-full border border-current p-1 text-xs">
+            {(["fr", "en", "ar"] as const).map((lang) => (
+              <button
+                key={lang}
+                type="button"
+                onClick={() => setLanguage(lang)}
+                className={`px-2 py-0.5 rounded-full uppercase transition-all text-[11px] font-bold ${
+                  language === lang
+                    ? "bg-current text-black dark:text-white font-extrabold"
+                    : "opacity-70 hover:opacity-100"
+                }`}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
+
           {cta && (
             <a href={cta.href} className="flex h-[2.75rem] items-center whitespace-nowrap rounded-full border border-current px-[1.25rem] text-[length:var(--text-label)] font-semibold uppercase tracking-[var(--label-tracking)] transition-opacity duration-300 hover:opacity-70">
               {cta.text}
             </a>
           )}
+
           {navItems.length > 0 && (
             <button
               type="button"
               aria-expanded={open}
               aria-label={open ? closeText : menuText}
               onClick={() => setOpen((v) => !v)}
-              className="flex size-[2.75rem] flex-col items-center justify-center gap-[0.3rem] rounded-full border border-current lg:hidden"
+              className="flex size-[2.75rem] flex-col items-center justify-center gap-[0.3rem] rounded-full border border-current"
             >
               <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
               <div aria-hidden="true" className="h-px w-[1rem] bg-current" />
@@ -99,9 +120,26 @@ const NavbarSealCorner = ({
             animate={reduce ? { opacity: 1 } : { clipPath: "inset(0% 0% 0% 0% round 0 0 0vw 0vw)" }}
             exit={reduce ? { opacity: 0 } : { clipPath: "inset(0% 0% 100% 0% round 0 0 50vw 50vw)" }}
             transition={{ duration: 0.8, ease: [0.75, 0, 0.25, 1] }}
-            className="fixed inset-0 z-[70] flex flex-col bg-deep px-[var(--gutter)] pb-[var(--gutter)] pt-[clamp(1rem,3vh,1.75rem)] text-deep-foreground lg:hidden"
+            className="fixed inset-0 z-[70] flex flex-col bg-deep px-[var(--gutter)] pb-[var(--gutter)] pt-[clamp(1rem,3vh,1.75rem)] text-deep-foreground"
           >
-            <div className="flex justify-end">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-1 rounded-full border border-current p-1 text-xs">
+                {(["fr", "en", "ar"] as const).map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => setLanguage(lang)}
+                    className={`px-2 py-0.5 rounded-full uppercase transition-all text-[11px] font-bold ${
+                      language === lang
+                        ? "bg-current text-deep font-extrabold"
+                        : "opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                ))}
+              </div>
+
               <button type="button" onClick={() => setOpen(false)} aria-label={closeText} className="flex size-[2.75rem] items-center justify-center rounded-full border border-current">
                 <div aria-hidden="true" className="relative size-[1rem]">
                   <div className="absolute left-0 top-1/2 h-px w-full rotate-45 bg-current" />
@@ -109,7 +147,8 @@ const NavbarSealCorner = ({
                 </div>
               </button>
             </div>
-            <ul className="mt-[clamp(2rem,8vh,4rem)] flex flex-col items-center gap-[0.5rem] text-center">
+
+            <ul className="mt-[clamp(2rem,8vh,4rem)] flex flex-col items-center gap-[0.75rem] text-center">
               {navItems.map((item, i) => (
                 <li key={`${i}-${item.href}`} className="overflow-hidden">
                   <motion.a
@@ -118,7 +157,7 @@ const NavbarSealCorner = ({
                     initial={reduce ? false : { y: "100%" }}
                     animate={{ y: "0%" }}
                     transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.3 + i * 0.06 }}
-                    className="block font-[family-name:var(--font-heading)] text-[length:var(--text-h1)] uppercase leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere]"
+                    className="block font-[family-name:var(--font-heading)] text-[length:var(--text-h1)] uppercase leading-[0.9] tracking-[-0.02em] [overflow-wrap:anywhere] hover:opacity-75 transition-opacity"
                   >
                     {item.name}
                   </motion.a>
@@ -127,7 +166,7 @@ const NavbarSealCorner = ({
             </ul>
             {cta && (
               <div className="mt-auto flex justify-center pt-[2rem]">
-                <a href={cta.href} onClick={() => setOpen(false)} className="btn-secondary w-full">
+                <a href={cta.href} onClick={() => setOpen(false)} className="btn-secondary w-full max-w-sm">
                   <p className="btn-label">{cta.text}</p>
                 </a>
               </div>
