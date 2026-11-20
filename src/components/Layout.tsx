@@ -20,7 +20,7 @@ export default function Layout() {
       <footer data-webild-section="Footer" data-section="footer">
         <FooterPlumPhone
           brand="Hotel Sid El-Aidi Medina"
-          phone={"06 43 69 66 93.\r\n7"}
+          phone={"06 43 69 66 93\r"}
           email="contact@hotelsidelaidi.com"
           address={[
             "8 Rue Sidi El Aidi",
