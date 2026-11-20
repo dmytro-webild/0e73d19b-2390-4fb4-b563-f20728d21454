@@ -41,10 +41,8 @@ const NavbarSealCorner = ({
         transition={{ duration: 0.8, delay }}
         className="pointer-events-none fixed inset-0 z-50 text-white mix-blend-difference"
       >
-        <a
-          href="#"
-          aria-label={brand}
-          className="pointer-events-auto absolute left-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-2.5 sm:gap-3 text-current transition-opacity duration-300 hover:opacity-75"
+        <div
+          className="pointer-events-auto absolute left-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-2.5 sm:gap-3 text-current"
         >
           <div className="flex size-7 items-center justify-center rounded-full border border-current shrink-0">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" className="size-3.5">
@@ -57,7 +55,7 @@ const NavbarSealCorner = ({
           <span className="font-[family-name:var(--font-heading)] text-base sm:text-lg lg:text-xl uppercase tracking-[0.06em] leading-none whitespace-nowrap">
             {brand}
           </span>
-        </a>
+        </div>
 
         <div className="pointer-events-auto absolute right-[var(--gutter)] top-[clamp(1rem,3vh,1.75rem)] flex h-[2.75rem] items-center gap-[0.75rem]">
           {cta && (
