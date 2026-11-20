@@ -34,7 +34,7 @@ const attractions: NearbyItem[] = [
       ar: "قلعة تاريخية عريقة تطل على المحيط الأطلسي ومصب نهر أبو رقراق.",
     },
     walkTime: "X min walk",
-    imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598098-groz5xbq.jpg",
+    imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795184213984-nrgiy0wp.jpg",
     imageAlt: {
       fr: "Porte et enceinte fortifiée de la Kasbah des Oudayas",
       en: "Fortified doorway of the Kasbah des Oudayas",
