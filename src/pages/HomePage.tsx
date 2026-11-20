@@ -2,6 +2,7 @@ import HeroArchPoster from "@/components/sections/hero/HeroArchPoster";
 import AboutArchCurve from "@/components/sections/about/AboutArchCurve";
 import PricingFramedSlider from "@/components/sections/pricing/PricingFramedSlider";
 import GalleryWindowMerge from "@/components/sections/gallery/GalleryWindowMerge";
+import NearbyAttractions from "@/components/sections/nearby/NearbyAttractions";
 import TestimonialPhotoQuote from "@/components/sections/testimonial/TestimonialPhotoQuote";
 import FaqPlusAccordion from "@/components/sections/faq/FaqPlusAccordion";
 import ContactPlumForm from "@/components/sections/contact/ContactPlumForm";
@@ -151,6 +152,10 @@ export default function HomePage() {
             }
           ]}
         />
+      </div>
+
+      <div id="nearby" data-webild-section="NearbyAttractions" data-webild-section-id="NearbyAttractions-1" data-section="nearby">
+        <NearbyAttractions />
       </div>
 
       <div id="testimonial" data-webild-section="TestimonialPhotoQuote" data-webild-section-id="TestimonialPhotoQuote-1" data-section="testimonial" data-scene>
