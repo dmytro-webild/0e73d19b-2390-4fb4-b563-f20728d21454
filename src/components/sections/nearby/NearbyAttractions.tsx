@@ -54,7 +54,7 @@ const attractions: NearbyItem[] = [
       ar: "واحة خضراء غناء بطراز أندلسي تحيط بها أشجار البرتقال والأزهار العطرة.",
     },
     walkTime: "X min walk",
-    imageSrc: "https://img.b2bpic.net/free-photo/arab-restaurant_23-2147794217.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/arab-restaurant_23-2147794217.jpg?_wi=1",
     imageAlt: {
       fr: "Jardins andalous des Oudayas",
       en: "Oudayas Andalusian Gardens",
@@ -74,7 +74,7 @@ const attractions: NearbyItem[] = [
       ar: "أزقة عريقة مفعمة بالحياة والحرف التقليدية والأسواق المغربية الأصيلة.",
     },
     walkTime: "X min walk",
-    imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598097-l933ha47.jpg",
+    imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598097-l933ha47.jpg?_wi=1",
     imageAlt: {
       fr: "Ruelles et échoppes de la Médina de Rabat",
       en: "Traditional alleyways of the Rabat Medina",
@@ -94,7 +94,7 @@ const attractions: NearbyItem[] = [
       ar: "مئذنة تاريخية شهيرة من الحجر الأحمر تعود للقرن الثاني عشر.",
     },
     walkTime: "X min walk",
-    imageSrc: "https://img.b2bpic.net/free-photo/sunset-reflects-ruined-monument-ancient-history-illuminated-generated-by-ai_188544-11678.jpg",
+    imageSrc: "https://img.b2bpic.net/free-photo/sunset-reflects-ruined-monument-ancient-history-illuminated-generated-by-ai_188544-11678.jpg?_wi=1",
     imageAlt: {
       fr: "Tour Hassan à Rabat",
       en: "Hassan Tower monument in Rabat",
