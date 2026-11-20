@@ -202,6 +202,18 @@ export default function HomePage() {
         <ContactPlumForm
           title="Réserver un séjour"
           script="contact"
+          locationTitle="Situation & Accès"
+          locationSubtitle="Au cœur de la Médina"
+          address="8 Rue Sidi El Aidi, Médina, Rabat 10030, Maroc"
+          googleMapsUrl="https://www.google.com/maps/search/?api=1&query=8+Rue+Sidi+El+Aidi+Rabat+Medina"
+          embedMapUrl="https://maps.google.com/maps?q=8+Rue+Sidi+El+Aidi,+Rabat+Medina,+Morocco&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          highlights={[
+            "📍 Au cœur de la Médina de Rabat",
+            "🚶‍♂️ 5 min à pied de la Kasbah des Oudayas",
+            "🌊 8 min des rives du Bouregreg & de la plage",
+            "🛍️ Accès direct aux souks traditionnels"
+          ]}
+          mapsButtonText="Ouvrir dans Google Maps"
           options={[
             "Chambre Double",
             "Chambre Twin",

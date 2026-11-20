@@ -26,6 +26,7 @@ export default function Layout() {
             "8 Rue Sidi El Aidi",
             "Rabat 10030"
           ]}
+          mapsUrl="https://www.google.com/maps/search/?api=1&query=8+Rue+Sidi+El+Aidi+Rabat+Medina"
           columns={[
             {
               title: "Navigation",
