@@ -38,7 +38,7 @@ export default function HomePage() {
           note="Authenticité & tradition"
           items={[
             {
-              imageSrc: "https://img.b2bpic.net/free-photo/beautiful-luxury-pillow-sofa_74190-2066.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-m1hxz5mv.jpg",
               imageAlt: "Beautiful luxury pillow on sofa"
             }
           ]}
@@ -69,7 +69,7 @@ export default function HomePage() {
                   value: "Wi-Fi gratuit"
                 }
               ],
-              imageSrc: "https://img.b2bpic.net/free-photo/room-interior-design_23-2148899453.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598100-mqy7odzw.jpg",
               imageAlt: "Room interior design",
               cta: {
                 text: "Réserver",
@@ -111,7 +111,7 @@ export default function HomePage() {
           word="RABAT"
           quote="Nous avons préservé l'architecture marocaine traditionnelle au cœur du patio."
           credit="Hugo Martin, gérant du riad"
-          imageSrc="https://img.b2bpic.net/free-photo/colorful-vibrant-indian-landscape_23-2151893902.jpg"
+          imageSrc="https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg"
           imageAlt="Colorful and vibrant indian landscape"
           items={[
             {
@@ -131,7 +131,7 @@ export default function HomePage() {
             },
             {
               title: "Escalier sculpté",
-              imageSrc: "https://img.b2bpic.net/free-photo/steps-old-city-vertical-frame-concept-wallpaper-background-journey-through-old-cities-mediterranean_166373-3114.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598097-l933ha47.jpg",
               imageAlt: "Steps in the old city vertical frame concept for wallpaper or background Journey through the old cities of the Mediterranean"
             },
             {
@@ -146,7 +146,7 @@ export default function HomePage() {
             },
             {
               title: "Patio central",
-              imageSrc: "https://img.b2bpic.net/free-photo/natural-beautiful-texture_23-2151931115.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg",
               imageAlt: "Natural beautiful texture"
             }
           ]}
