@@ -95,7 +95,7 @@ export default function HomePage() {
                   value: "Wi-Fi gratuit"
                 }
               ],
-              imageSrc: "https://img.b2bpic.net/free-photo/pillow-bed-with-light-lamp_74190-2095.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-m1hxz5mv.jpg",
               imageAlt: "Pillow on bed with light lamp",
               cta: {
                 text: "Réserver",
