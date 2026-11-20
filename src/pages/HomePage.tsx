@@ -38,7 +38,7 @@ export default function HomePage() {
           note="Authenticité & tradition"
           items={[
             {
-              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-m1hxz5mv.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795184314128-xjd0mw3n.jpg",
               imageAlt: "Beautiful luxury pillow on sofa"
             }
           ]}
