@@ -111,7 +111,7 @@ export default function HomePage() {
           word="RABAT"
           quote="Nous avons préservé l'architecture marocaine traditionnelle au cœur du patio."
           credit="Hugo Martin, gérant du riad"
-          imageSrc="https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg"
+          imageSrc="https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg?_wi=1"
           imageAlt="Colorful and vibrant indian landscape"
           items={[
             {
@@ -146,7 +146,7 @@ export default function HomePage() {
             },
             {
               title: "Patio central",
-              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3MLOeyW4BsnFq0Fm7Mpzc72h7pC/uploaded-1795181598099-rs701r2v.jpg?_wi=2",
               imageAlt: "Natural beautiful texture"
             }
           ]}
