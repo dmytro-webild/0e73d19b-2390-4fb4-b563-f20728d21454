@@ -34,7 +34,7 @@ export default function HomePage() {
           title="Havre de paix"
           label="Architecture marocaine & tradition"
           placeTitle="MÉDINA DE RABAT"
-          description="Plongez dans l'authenticité d'un Riad traditionnel. Entre zelliges artisanaux, patio ombragé et architecture historique, vivez une expérience authentique au cœur de Rabat."
+          description="Plongez dans l'authenticité d'un Hôtel traditionnel. Entre zelliges artisanaux, patio ombragé et architecture historique, vivez une expérience authentique au cœur de Rabat."
           note="Authenticité & tradition"
           items={[
             {
