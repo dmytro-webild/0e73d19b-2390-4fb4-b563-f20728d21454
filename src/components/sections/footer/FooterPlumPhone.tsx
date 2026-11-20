@@ -11,6 +11,7 @@ type FooterPlumPhoneProps = {
   phone?: string;
   email?: string;
   address?: string[];
+  mapsUrl?: string;
   columns?: FooterColumn[];
   legal?: string;
   brand?: string;
@@ -31,6 +32,7 @@ const FooterPlumPhone = ({
   phone = "+34 938 11 42 00",
   email = "stay@villasolenne.es",
   address = ["Passeig de la Ribera 42", "08870 Sitges, Spain"],
+  mapsUrl,
   columns = defaultColumns,
   legal = "Villa Solenne. All rights reserved.",
   brand = "Villa Solenne",
@@ -68,11 +70,27 @@ const FooterPlumPhone = ({
         )}
         {address.length > 0 && (
           <div className="mt-6 flex flex-col gap-1">
-            {address.map((line, index) => (
-              <p key={index} className="text-[length:var(--text-small)] leading-[1.5] opacity-80">
-                {line}
-              </p>
-            ))}
+            {mapsUrl ? (
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Voir ${address.join(", ")} sur Google Maps`}
+                className="group flex flex-col items-center opacity-85 transition-opacity hover:opacity-100"
+              >
+                {address.map((line, index) => (
+                  <p key={index} className="text-[length:var(--text-small)] leading-[1.5] group-hover:underline">
+                    {line}
+                  </p>
+                ))}
+              </a>
+            ) : (
+              address.map((line, index) => (
+                <p key={index} className="text-[length:var(--text-small)] leading-[1.5] opacity-80">
+                  {line}
+                </p>
+              ))
+            )}
           </div>
         )}
       </div>

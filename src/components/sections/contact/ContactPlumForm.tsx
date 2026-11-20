@@ -22,6 +22,13 @@ type ContactPlumFormProps = {
   imageSrc?: string;
   imageAlt?: string;
   details?: Detail[];
+  locationTitle?: string;
+  locationSubtitle?: string;
+  address?: string;
+  googleMapsUrl?: string;
+  embedMapUrl?: string;
+  highlights?: string[];
+  mapsButtonText?: string;
   ariaLabel?: string;
   className?: string;
 };
@@ -35,6 +42,13 @@ const ContactPlumForm = ({
   imageSrc,
   imageAlt = "",
   details = [],
+  locationTitle,
+  locationSubtitle,
+  address,
+  googleMapsUrl,
+  embedMapUrl,
+  highlights = [],
+  mapsButtonText = "Voir sur Google Maps",
   ariaLabel,
   className,
 }: ContactPlumFormProps) => {
@@ -108,8 +122,93 @@ const ContactPlumForm = ({
           </motion.form>
         </div>
 
-        <div className="flex flex-col gap-8">
-          {imageSrc && (
+        <div className="flex flex-col gap-6">
+          {(locationTitle || address || googleMapsUrl || highlights.length > 0) && (
+            <motion.div {...fade(0.25)} className="flex flex-col gap-4 rounded-2xl border border-secondary-foreground/25 bg-secondary-foreground/5 p-6 sm:p-7 backdrop-blur-sm">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                {locationSubtitle && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-secondary-foreground/30 bg-secondary-foreground/10 px-3 py-1 text-[length:var(--text-label)] font-semibold uppercase tracking-[var(--label-tracking)] text-secondary-foreground">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-3.5 shrink-0" aria-hidden="true">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    {locationSubtitle}
+                  </span>
+                )}
+                {googleMapsUrl && (
+                  <a
+                    href={googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-[length:var(--text-label)] font-semibold uppercase tracking-[var(--label-tracking)] text-secondary-foreground transition-opacity hover:opacity-75 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current"
+                  >
+                    <span>Google Maps</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-3.5" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+
+              {locationTitle && (
+                <h3 className="font-[family-name:var(--font-heading)] text-[length:var(--text-h3)] text-secondary-foreground">
+                  {locationTitle}
+                </h3>
+              )}
+
+              {address && (
+                <p className="flex items-start gap-2.5 text-[length:var(--text-body)] leading-relaxed text-secondary-foreground/85">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" className="size-5 shrink-0 mt-0.5" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>{address}</span>
+                </p>
+              )}
+
+              {highlights.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-2 border-t border-secondary-foreground/15">
+                  {highlights.map((h, i) => (
+                    <span key={`${i}-${h}`} className="inline-flex items-center gap-1.5 rounded-lg bg-secondary-foreground/10 px-3 py-1.5 text-[length:var(--text-small)] font-medium text-secondary-foreground">
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {embedMapUrl && (
+            <motion.div {...fade(0.35)} className="relative flex w-full flex-col overflow-hidden rounded-2xl border border-secondary-foreground/25 min-h-[300px] lg:min-h-[340px] lg:flex-1 shadow-sm">
+              <iframe
+                src={embedMapUrl}
+                title="Google Maps Location - Hotel Sid El-Aidi Medina"
+                className="h-full w-full min-h-[300px] border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              {googleMapsUrl && (
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full border border-secondary-foreground/20 bg-secondary/95 px-4 py-2 text-[length:var(--text-label)] font-semibold uppercase tracking-wider text-secondary-foreground shadow-md backdrop-blur-md transition-all hover:bg-secondary hover:scale-105"
+                >
+                  <span>{mapsButtonText}</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-3.5" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              )}
+            </motion.div>
+          )}
+
+          {imageSrc && !embedMapUrl && (
             <div className="flex w-full flex-col border border-secondary-foreground/25 p-2 lg:min-h-[28rem] lg:flex-1">
               <EraArchWindow className="aspect-[4/5] w-full lg:aspect-auto lg:flex-1">
                 <Media src={imageSrc} alt={imageAlt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
